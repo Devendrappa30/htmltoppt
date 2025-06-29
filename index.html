@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to PPT Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>HTML to PowerPoint Converter</h1>
+        
+        <div class="converter-box">
+            <div class="input-methods">
+                <div class="method active" id="pasteMethod">
+                    <h3>Paste HTML</h3>
+                    <textarea id="htmlContent" placeholder="Paste your HTML content here..."></textarea>
+                </div>
+                
+                <div class="method" id="uploadMethod">
+                    <h3>Upload HTML File</h3>
+                    <input type="file" id="htmlFile" accept=".html,.htm">
+                    <div class="file-info" id="fileInfo">No file selected</div>
+                </div>
+                
+                <div class="method-tabs">
+                    <button class="tab-btn active" data-method="pasteMethod">Paste HTML</button>
+                    <button class="tab-btn" data-method="uploadMethod">Upload File</button>
+                </div>
+            </div>
+            
+            <div class="options">
+                <label>
+                    <input type="checkbox" id="includeImages" checked>
+                    Include Images (as screenshots)
+                </label>
+                <label>
+                    <input type="checkbox" id="preserveStyles" checked>
+                    Preserve Basic Styles
+                </label>
+            </div>
+            
+            <button id="convertBtn" class="convert-btn">Convert to PowerPoint</button>
+            
+            <div class="status" id="status"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
