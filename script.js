@@ -1,88 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const pasteMethod = document.getElementById('pasteMethod');
-    const uploadMethod = document.getElementById('uploadMethod');
-    const htmlContent = document.getElementById('htmlContent');
-    const htmlFile = document.getElementById('htmlFile');
-    const fileInfo = document.getElementById('fileInfo');
-    const convertBtn = document.getElementById('convertBtn');
-    const status = document.getElementById('status');
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    
-    // Switch between paste and upload methods
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const methodId = this.getAttribute('data-method');
-            
-            // Update active tab
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Show selected method
-            document.querySelectorAll('.method').forEach(method => {
-                method.classList.remove('active');
-            });
-            document.getElementById(methodId).classList.add('active');
+// Function to toggle the visibility of case study content
+function toggleCaseStudy(id) {
+    const content = document.getElementById(id);
+    // Toggle 'active' class to trigger CSS transition for max-height
+    content.classList.toggle('active');
+}
+
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
-    });
-    
-    // Update file info when file is selected
-    htmlFile.addEventListener('change', function() {
-        if (this.files.length > 0) {
-            fileInfo.textContent = `Selected: ${this.files[0].name}`;
-        } else {
-            fileInfo.textContent = 'No file selected';
-        }
-    });
-    
-    // Handle conversion
-    convertBtn.addEventListener('click', async function() {
-        status.textContent = 'Processing...';
-        status.className = 'status loading';
-        
-        try {
-            const formData = new FormData();
-            const options = {
-                includeImages: document.getElementById('includeImages').checked,
-                preserveStyles: document.getElementById('preserveStyles').checked
-            };
-            
-            formData.append('options', JSON.stringify(options));
-            
-            if (pasteMethod.classList.contains('active') && htmlContent.value.trim()) {
-                formData.append('htmlContent', htmlContent.value);
-            } else if (uploadMethod.classList.contains('active') && htmlFile.files.length > 0) {
-                formData.append('htmlFile', htmlFile.files[0]);
-            } else {
-                throw new Error('Please provide HTML content or select a file');
+    }
+
+    // Toggle Resources dropdown for mobile menu
+    const resourcesDropdownBtnMobile = document.getElementById('resources-dropdown-btn-mobile');
+    if (resourcesDropdownBtnMobile) {
+        resourcesDropdownBtnMobile.addEventListener('click', function() {
+            // Find the closest parent with 'relative' class to toggle the dropdown
+            const parentDiv = this.closest('.relative');
+            if (parentDiv) {
+                parentDiv.classList.toggle('dropdown-mobile-active');
             }
-            
-            const response = await fetch('/convert', {
-                method: 'POST',
-                body: formData
-            });
-            
-            if (!response.ok) {
-                const error = await response.text();
-                throw new Error(error);
+        });
+    }
+
+    // Attach event listeners for case study toggles
+    // Using event delegation for efficiency and future-proofing
+    const caseStudyHeaders = document.querySelectorAll('#case-studies .cursor-pointer');
+    caseStudyHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const caseStudyId = this.getAttribute('data-case-study');
+            if (caseStudyId) {
+                toggleCaseStudy(caseStudyId);
             }
-            
-            // Handle the file download
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `converted-${new Date().getTime()}.pptx`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-            
-            status.textContent = 'Conversion successful! Download started.';
-            status.className = 'status success';
-        } catch (error) {
-            console.error('Conversion error:', error);
-            status.textContent = `Error: ${error.message}`;
-            status.className = 'status error';
-        }
+        });
     });
 });
