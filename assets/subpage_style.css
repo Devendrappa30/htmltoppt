@@ -1,0 +1,9 @@
+/* Styles specific to sub-pages */
+
+/* Ensures smooth scrolling behavior */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Add any other styles specific to your sub-pages here */
+/* For example, if you want different font sizes or background colors on sub-pages */
