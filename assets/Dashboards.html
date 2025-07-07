@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboards | Devendrappa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+        .nav-button {
+            background-color: #1e3a8a;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-button" title="Home"><i class="fas fa-home text-xl"></i></a>
+        <button onclick="window.history.back()" class="nav-button" title="Back"><i class="fas fa-arrow-left text-xl"></i></button>
+    </div>
+
+    <nav class="bg-blue-900 text-white sticky top-0 z-10 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold">Agile Dashboards</h1>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Agile Dashboards</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Team-Level Dashboards</h3>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <img src="images/sample-dashboard1.png" alt="Team Dashboard" class="w-full rounded border border-gray-200">
+                    </div>
+                    <p class="mt-4 text-gray-700">Real-time view of sprint progress, blockers, and key metrics for development teams.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Program-Level Dashboards</h3>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <img src="images/sample-dashboard2.png" alt="Program Dashboard" class="w-full rounded border border-gray-200">
+                    </div>
+                    <p class="mt-4 text-gray-700">Aggregated view across multiple teams for program and portfolio management.</p>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold text-blue-900 mb-4">Dashboard Features</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-sync-alt text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Real-time Updates</h4>
+                            <p class="text-gray-600">Automatically refreshes with latest data from your Agile tools</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-sliders-h text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Customizable Views</h4>
+                            <p class="text-gray-600">Tailor dashboards to different stakeholder needs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-bell text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Alerting</h4>
+                            <p class="text-gray-600">Get notified when metrics fall outside expected ranges</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-blue-900 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Devendrappa. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
