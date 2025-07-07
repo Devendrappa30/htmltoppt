@@ -36,6 +36,10 @@
         .dropdown-content a:hover {
             background-color: #dbeafe;
         }
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            display: block;
+        }
         .dropdown-btn:after {
             content: '';
             border: solid #fff;
@@ -62,15 +66,11 @@
                 <a href="#case-studies" class="hover:bg-blue-700 px-2 py-2 rounded-md">Case Studies</a>
                 <a href="#certifications" class="hover:bg-blue-700 px-2 py-2 rounded-md">Certificates</a>
                 <a href="#best-practices" class="hover:bg-blue-700 px-2 py-2 rounded-md">Best Practices</a>
-                <!-- Resources Dropdown - Revised -->
-                <div class="relative">
-                    <button id="resourcesDropdownBtn" class="dropdown-btn hover:bg-blue-700 px-2 py-2 rounded-md focus:outline-none flex items-center">
+                <div class="dropdown relative">
+                    <button class="dropdown-btn hover:bg-blue-700 px-2 py-2 rounded-md focus:outline-none flex items-center">
                         Resources
-                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
                     </button>
-                    <div id="resourcesDropdown" class="dropdown-content absolute right-0 mt-2 shadow-lg z-30 bg-white min-w-[160px] rounded-md hidden">
+                    <div class="dropdown-content absolute right-0 mt-2 shadow-lg">
                         <a href="assets/html_pages/Reports & Metrics.html">Reports & Metrics</a>
                         <a href="assets/html_pages/Dashboards.html">Dashboards</a>
                         <a href="assets/html_pages/other_documents.html">Other Documents</a>
@@ -101,10 +101,10 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
             </button>
-            <div class="dropdown-content mt-1 w-full bg-white rounded-md hidden">
-                <a href="assets/html_pages/Reports & Metrics.html" class="block text-blue-900 hover:bg-blue-100 px-4 py-2 rounded-md text-sm">Reports & Metrics</a>
-                <a href="assets/html_pages/Dashboards.html" class="block text-blue-900 hover:bg-blue-100 px-4 py-2 rounded-md text-sm">Dashboards</a>
-                <a href="assets/html_pages/other_documents.html" class="block text-blue-900 hover:bg-blue-100 px-4 py-2 rounded-md text-sm">Other Documents</a>
+            <div class="dropdown-content mt-1 w-full bg-blue-700 rounded-md">
+                <a href="assets/html_pages/Reports & Metrics.html" class="block text-white hover:bg-blue-600 px-4 py-2 rounded-md text-sm">Reports & Metrics</a>
+                <a href="dashboards.html" class="block text-white hover:bg-blue-600 px-4 py-2 rounded-md text-sm">Dashboards</a>
+                <a href="other_documents.html" class="block text-white hover:bg-blue-600 px-4 py-2 rounded-md text-sm">Other Documents</a>
             </div>
         </div>
         <a href="assets/html_pages/Service.html" class="block text-white hover:bg-blue-700 px-3 py-2 rounded-md text-base font-medium">Services</a>
@@ -120,21 +120,20 @@
         </div>
     </section>
 
-    <!-- About Section Revised for Alignment and Professional Look -->
-    <section id="about" class="py-16 bg-white">
+    <section id="about" class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
-                <div class="md:w-1/2 flex flex-col justify-center">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">About Me</h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2">
                     <p class="text-lg text-gray-700 mb-4">
-                        I am a Certified Scrum Master (CSM) with 10 years of experience in Agile project management. My expertise lies in facilitating Agile ceremonies (daily stand-ups, sprint planning, reviews, and retrospectives), coaching teams, and driving process improvements.
+                        I am a Certified Scrum Master (CSM) with 10 years of experience in Agile project management. My expertise lies in facilitating Agile ceremonies (daily stand-ups, sprint planning, retrospectives) and driving process improvements for teams across diverse industries.
                     </p>
                     <p class="text-lg text-gray-700">
-                        My goal is to maximize productivity, foster continuous improvement, and deliver high-quality software. I specialize in Scrum, Kanban, XP, LeSS, and SAFe frameworks, with strong skills in cross-functional team leadership and stakeholder engagement.
+                        My goal is to maximize productivity, foster continuous improvement, and deliver high-quality software. I specialize in Scrum, Kanban, XP, LeSS, and SAFe frameworks, with strong skills in coaching, stakeholder communication, and metrics-driven delivery.
                     </p>
                 </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="images/Myimage.png" alt="Agile Team" class="rounded-lg shadow-md w-80 max-w-full h-auto object-cover">
+                <div class="md:w-1/2 mt-6 md:mt-0 md:pl-8">
+                    <img src="images/Myimage.png" alt="Agile Team" class="rounded-lg shadow-md">
                 </div>
             </div>
         </div>
@@ -214,7 +213,7 @@
                         <p class="text-gray-700 mb-2"><strong>Client:</strong> Narayana Health (Healthcare, 250 agents)</p>
                         <p class="text-gray-700 mb-2"><strong>Challenges:</strong> Manual lead handling, inefficient support, data migration gaps, lack of self-service.</p>
                         <p class="text-gray-700 mb-2"><strong>Solutions:</strong> Implemented Zendesk Sell/Support, automated ticket routing, self-service portal, integrated HMS/EMR/Telephony, 25+ custom reports.</p>
-                        <p class="text-gray-700 mb-2"><strong>Results:</strong> 30% increase in lead conversions, 40% faster response times, 25% improved resolution speed, 35% better SLA compliance, 40% boost in CSAT.</p>
+                        <p class="text-gray-700 mb-2"><strong>Results:</strong> 30% increase in lead conversions, 40% faster response times, 25% improved resolution speed, 35% better SLA compliance, 40% reduction in manual effort.</p>
                         <p class="text-gray-700"><strong>Technologies:</strong> Zendesk Sell/Support, HMS, EMR, Telephony, Agile methodology.</p>
                     </div>
                 </div>
@@ -224,7 +223,7 @@
                         <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lab Equipment Project" class="rounded-lg mb-4">
                         <p class="text-gray-700 mb-2"><strong>Client:</strong> Glassco Laboratory Equipment (1000+ employees, 25 sales agents)</p>
                         <p class="text-gray-700 mb-2"><strong>Challenges:</strong> Manual sales tracking, limited lead management, expense calculation issues, lack of integrations.</p>
-                        <p class="text-gray-700 mb-2"><strong>Solutions:</strong> Configured Zendesk Sell, integrated Google Maps/SAP/LinkedIn, multi-channel communication (WhatsApp, Facebook), automated expense tracking.</p>
+                        <p class="text-gray-700 mb-2"><strong>Solutions:</strong> Configured Zendesk Sell, integrated Google Maps/SAP/LinkedIn, multi-channel communication (WhatsApp, Facebook), automated expense management.</p>
                         <p class="text-gray-700 mb-2"><strong>Results:</strong> Improved sales tracking, higher lead conversions, automated expense management, seamless integrations.</p>
                         <p class="text-gray-700"><strong>Technologies:</strong> Zendesk Sell, Google Maps API, SAP, LinkedIn, WhatsApp, Agile methodology.</p>
                     </div>
@@ -245,7 +244,7 @@
                     <div id="qualitykiosk" class="case-study-content">
                         <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="IT Services Project" class="rounded-lg mb-4">
                         <p class="text-gray-700 mb-2"><strong>Client:</strong> QualityKiosk (IT Services)</p>
-                        <p class="text-gray-700 mb-2"><strong>Challenges:</strong> Inefficient ITSM workflows, lack of unified system, limited self-service, no integration.</p>
+                        <p class="text-700 mb-2"><strong>Challenges:</strong> Inefficient ITSM workflows, lack of unified system, limited self-service, no integration.</p>
                         <p class="text-gray-700 mb-2"><strong>Solutions:</strong> Configured Zendesk Suite, automated ITSM workflows, integrated HRMS/AD, multi-channel support, custom dashboards.</p>
                         <p class="text-gray-700 mb-2"><strong>Results:</strong> CSAT from 55% to 92%, first response time from 37 to 7 hours, 19% resolution efficiency increase, 20% cost reduction.</p>
                         <p class="text-gray-700"><strong>Technologies:</strong> Zendesk Suite, MyndBend, OpsGenie, Jira, Salesforce, SAP, Agile methodology.</p>
@@ -337,43 +336,12 @@
             }
         }
 
-        // Dropdown toggle script (desktop)
-        const dropdownBtn = document.getElementById('resourcesDropdownBtn');
-        const dropdownMenu = document.getElementById('resourcesDropdown');
-
-        dropdownBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            dropdownMenu.classList.toggle('hidden');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
-                dropdownMenu.classList.add('hidden');
-            }
-        });
-
-        // Accessibility: close dropdown on Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === "Escape") {
-                dropdownMenu.classList.add('hidden');
-            }
-        });
-
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-        });
-
-        // Mobile dropdown toggle
-        document.querySelectorAll('#mobile-menu .dropdown-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                const next = btn.nextElementSibling;
-                if (next) next.classList.toggle('hidden');
-            });
         });
     </script>
 </body>
