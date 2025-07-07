@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Documents | Devendrappa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+        .nav-button {
+            background-color: #1e3a8a;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-button" title="Home"><i class="fas fa-home text-xl"></i></a>
+        <button onclick="window.history.back()" class="nav-button" title="Back"><i class="fas fa-arrow-left text-xl"></i></button>
+    </div>
+
+    <nav class="bg-blue-900 text-white sticky top-0 z-10 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold">Other Documents</h1>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Agile Resources & Documents</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Templates</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-file-word text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">Sprint Planning Template</h4>
+                                <p class="text-sm text-gray-600">Structured agenda for effective sprint planning sessions</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-file-excel text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">Retrospective Template</h4>
+                                <p class="text-sm text-gray-600">Guided format for meaningful retrospectives</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-file-powerpoint text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">Sprint Review Deck</h4>
+                                <p class="text-sm text-gray-600">Presentation template for sprint demos</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Guides</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-book text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">Agile Transformation Playbook</h4>
+                                <p class="text-sm text-gray-600">Step-by-step guide for adopting Agile</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">Definition of Ready/Done</h4>
+                                <p class="text-sm text-gray-600">Examples and best practices</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-users text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">Stakeholder Engagement Guide</h4>
+                                <p class="text-sm text-gray-600">Managing expectations in Agile projects</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Cheat Sheets</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-scroll text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">Scrum Events Quick Reference</h4>
+                                <p class="text-sm text-gray-600">Timing and participants for each ceremony</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-question-circle text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">Facilitation Techniques</h4>
+                                <p class="text-sm text-gray-600">Methods for engaging teams</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-balance-scale text-blue-600
