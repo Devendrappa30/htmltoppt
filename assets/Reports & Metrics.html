@@ -3,56 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reports & Metrics - Devendrappa</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Reports & Metrics | Devendrappa</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom Stylesheet for sub-pages -->
-    <link rel="stylesheet" href="../../assets/html_pages/subpage_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+        .nav-button {
+            background-color: #1e3a8a;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans smooth-scroll">
+<body class="bg-gray-100 font-sans">
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-button" title="Home"><i class="fas fa-home text-xl"></i></a>
+        <button onclick="window.history.back()" class="nav-button" title="Back"><i class="fas fa-arrow-left text-xl"></i></button>
+    </div>
+
     <nav class="bg-blue-900 text-white sticky top-0 z-10 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center space-x-4">
-                    <!-- Home button: Links to the main index.html page -->
-                    <a href="../../index.html" class="hover:bg-blue-700 px-3 py-2 rounded-md">Home</a>
-                    <!-- Back button: Uses JavaScript history API to go back -->
-                    <button id="back-button" class="hover:bg-blue-700 px-3 py-2 rounded-md">Back</button>
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold">Reports & Metrics</h1>
                 </div>
-                <h1 class="text-xl font-bold">Reports & Metrics</h1>
             </div>
         </div>
     </nav>
 
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">Detailed Reports & Metrics</h2>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <p class="text-lg text-gray-700 mb-4">
-                    Here you'll find comprehensive reports and key metrics that I utilize to track project progress, team performance, and overall Agile health.
-                </p>
-                <ul class="text-gray-700 list-disc list-inside space-y-2">
-                    <li>**Burn-down Charts:** Visualizing work remaining in a sprint or release.</li>
-                    <li>**Velocity Charts:** Tracking the amount of work a team can complete in a sprint.</li>
-                    <li>**Cumulative Flow Diagrams (CFD):** Showing work in progress, completed work, and incoming work.</li>
-                    <li>**Customer Satisfaction (CSAT) Scores:** Measuring customer happiness with delivered features.</li>
-                    <li>**Lead Time & Cycle Time:** Understanding the efficiency of the development process.</li>
-                </ul>
-                <p class="text-lg text-gray-700 mt-4">
-                    These metrics enable data-driven decision-making and foster continuous improvement.
-                </p>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Agile Reports & Metrics</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Sprint Reports</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-chart-line text-blue-600 mt-1 mr-3"></i>
+                            <span>Burndown charts showing work remaining vs time</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-running text-blue-600 mt-1 mr-3"></i>
+                            <span>Velocity tracking across multiple sprints</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-tasks text-blue-600 mt-1 mr-3"></i>
+                            <span>Scope change reports showing added/removed work</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Release Metrics</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-calendar-check text-blue-600 mt-1 mr-3"></i>
+                            <span>Release burnup charts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-bug text-blue-600 mt-1 mr-3"></i>
+                            <span>Defect arrival rate and resolution time</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-thumbs-up text-blue-600 mt-1 mr-3"></i>
+                            <span>Feature adoption metrics</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Team Health Metrics</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-heartbeat text-blue-600 mt-1 mr-3"></i>
+                            <span>Sprint retrospective trends</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-user-friends text-blue-600 mt-1 mr-3"></i>
+                            <span>Team satisfaction surveys</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-blue-600 mt-1 mr-3"></i>
+                            <span>Cycle time and lead time distributions</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Stakeholder Reports</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-briefcase text-blue-600 mt-1 mr-3"></i>
+                            <span>Executive summary dashboards</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-project-diagram text-blue-600 mt-1 mr-3"></i>
+                            <span>Portfolio progress reports</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chart-pie text-blue-600 mt-1 mr-3"></i>
+                            <span>ROI and business value tracking</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <!-- Add more specific content for Reports & Metrics here -->
         </div>
-    </section>
+    </main>
 
     <footer class="bg-blue-900 text-white py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p>&copy; 2025 Devendrappa. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Custom JavaScript for sub-pages -->
-    <script src="../../assets/html_pages/subpage_script.js" defer></script>
 </body>
 </html>
