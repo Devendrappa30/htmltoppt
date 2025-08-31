@@ -1,136 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devendrappa - Agile Practitioner Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .smooth-scroll { scroll-behavior: smooth; }
-        .case-study-content { display: none; }
-        .case-study-content.active { display: block; }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 30;
-            margin-top: 0.5rem;
-            border-radius: 0.375rem;
-        }
-        .dropdown-content a {
-            color: #1e3a8a;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            display: block;
-            border-radius: 0.375rem;
-        }
-        .dropdown-content a:hover { background-color: #dbeafe; }
-        .dropdown-btn:after {
-            content: '';
-            border: solid #fff;
-            border-width: 0 2px 2px 0;
-            display: inline-block;
-            padding: 3px;
-            margin-left: 6px;
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-            vertical-align: middle;
-        }
-        .nav-buttons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-            display: flex;
-            gap: 10px;
-        }
-        .nav-button {
-            background-color: #1e3a8a;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        .nav-button:hover {
-            background-color: #1e40af;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Axis Bank Budget Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    canvas { max-width: 600px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  </style>
 </head>
-<body class="bg-gray-100 font-sans smooth-scroll">
-    <div class="nav-buttons">
-        <a href="index.html" class="nav-button" title="Home"><i class="fas fa-home text-xl"></i></a>
-        <button onclick="window.history.back()" class="nav-button" title="Back"><i class="fas fa-arrow-left text-xl"></i></button>
-    </div>
+<body>
 
-    <!-- Rest of your index.html content (same as previous example) -->
-    <!-- ... -->
-    
-    <script>
-        // Your existing JavaScript
-        function toggleCaseStudy(id) {
-            const content = document.getElementById(id);
-            content.classList.toggle('active');
-            if (content.style.display === "block" || content.style.display === "") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        }
+  <h2>Axis Bank Statement Analyzer</h2>
+  <input type="file" id="fileInput" accept=".csv">
+  <canvas id="expenseChart"></canvas>
+  <table id="summaryTable"></table>
 
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Desktop Resources dropdown toggle
-        const resourcesDropdownBtn = document.getElementById('resources-dropdown-btn');
-        const resourcesDropdownContent = document.getElementById('resources-dropdown-content');
-        let resourcesDropdownOpen = false;
-        resourcesDropdownBtn?.addEventListener('click', function(e) {
-            e.stopPropagation();
-            resourcesDropdownOpen = !resourcesDropdownOpen;
-            resourcesDropdownContent.style.display = resourcesDropdownOpen ? 'block' : 'none';
-        });
-
-        document.addEventListener('click', function(e) {
-            if (resourcesDropdownOpen) {
-                resourcesDropdownContent.style.display = 'none';
-                resourcesDropdownOpen = false;
-            }
-        });
-
-        resourcesDropdownContent?.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+  <script src="app.js"></script>
 </body>
 </html>
